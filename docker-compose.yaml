@@ -1,0 +1,22 @@
+version: '3'
+services:
+  item_service:
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      MYSQL_HOST: mysqlitem
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_PORT: 3306
+      MYSQL_DB: item_db
+    depends_on:
+      - mysqlitem
+  mysqlitem:
+    container_name: mysqlitem
+    image: mysql:latest
+    ports:
+      - 3309:3306
+    environment:
+      MYSQL_DATABASE: item_db
+      MYSQL_ROOT_PASSWORD: root
