@@ -38,3 +38,4 @@ out/
 
 .dockerignore
 Dockerfile
+docker-compose.yaml
